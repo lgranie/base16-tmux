@@ -1,30 +1,48 @@
-# COLOUR (base16)
+## COLORSCHEME: {{scheme-name}} scheme by {{scheme-author}}
+set-option -g status "on"
 
-# default statusbar colors
-set-option -g status-style "fg=#{{base04-hex}},bg=#{{base01-hex}}"
+# default statusbar color
+set-option -g status-style "bg=#{{base00-hex}},fg=#{{base05-hex}}" # bg=bg1, fg=fg1
 
 # default window title colors
-set-window-option -g window-status-style "fg=#{{base04-hex}},bg=default"
+set-window-option -g window-status-style "bg=#{{base0A-hex}},fg=#{{base00-hex}}" # bg=yellow, fg=bg1
+
+# default window with an activity alert
+set-window-option -g window-status-activity-style "bg=#{{base00-hex}},fg=#{{base06-hex}}" # bg=bg1, fg=fg3
 
 # active window title colors
-set-window-option -g window-status-current-style "fg=#{{base0A-hex}},bg=default"
+set-window-option -g window-status-current-style "bg=#{{base08-hex}},fg=#{{base00-hex}}" # fg=bg1
 
 # pane border
-set-option -g pane-border-style "fg=#{{base01-hex}}"
-set-option -g pane-active-border-style "fg=#{{base02-hex}}"
+set-option -g pane-active-border-style "fg=#{{base02-hex}}" #fg2
+set-option -g pane-border-style "fg=#{{base00-hex}}" #bg1
 
-# message text
-set-option -g message-style "fg=#{{base05-hex}},bg=#{{base01-hex}}"
+# message infos
+set-option -g message-style "bg=#{{base01-hex}},fg=#{{base05-hex}}" # bg=bg2, fg=fg1
+
+# writing commands inactive
+set-option -g message-command-style "bg=#{{base01-hex}},fg=#{{base05-hex}}" # bg=fg3, fg=bg1
 
 # pane number display
-set-option -g display-panes-active-colour "#{{base0B-hex}}"
-set-option -g display-panes-colour "#{{base0A-hex}}"
+set-option -g display-panes-active-colour "#{{base02-hex}}" #fg2
+set-option -g display-panes-colour "#{{base00-hex}}" #bg1
 
 # clock
-set-window-option -g clock-mode-colour "#{{base0B-hex}}"
-
-# copy mode highligh
-set-window-option -g mode-style "fg=#{{base04-hex}},bg=#{{base02-hex}}"
+set-window-option -g clock-mode-colour "#{{base0D-hex}}" #blue
 
 # bell
-set-window-option -g window-status-bell-style "fg=#{{base01-hex}},bg=#{{base08-hex}}"
+set-window-option -g window-status-bell-style "fg=#{{base01-hex}},bg=#{{base08-hex}}" # bg=#{{base08-hex}}, fg=bg
+
+## Theme settings mixed with colors (unfortunately, but there is no cleaner way)
+set-option -g status-justify "left"
+set-option -g status-left-style none
+set-option -g status-left-length "80"
+set-option -g status-right-style none
+set-option -g status-right-length "80"
+set-window-option -g window-status-separator ""
+
+set-option -g status-left "#[fg=#{{base06-hex}}, bg=#{{base00-hex}}] #S #[fg=#{{base00-hex}}, bg=#{{base00-hex}}, nobold, noitalics, nounderscore]"
+set-option -g status-right "#[fg=#{{base01-hex}}, bg=#{{base00-hex}}, nobold, nounderscore, noitalics]#[fg=#{{base04-hex}},bg=#{{base01-hex}}] %Y-%m-%d  %H:%M #[fg=#{{base06-hex}}, bg=#{{base01-hex}}, nobold, noitalics, nounderscore]#[fg=#{{base00-hex}}, bg=#{{base06-hex}}] #h "
+
+set-window-option -g window-status-current-format "#[fg=#{{base00-hex}}, bg=#{{base0A-hex}}, nobold, noitalics, nounderscore]#[fg=#{{base01-hex}}, bg=#{{base0A-hex}}] #I #[fg=#{{base01-hex}}, bg=#{{base0A-hex}}, bold] #W #[fg=#{{base0A-hex}}, bg=#{{base00-hex}}, nobold, noitalics, nounderscore]"
+set-window-option -g window-status-format "#[fg=#{{base00-hex}},bg=#{{base01-hex}},noitalics]#[fg=#{{base05-hex}},bg=#{{base01-hex}}] #I #[fg=#{{base05-hex}}, bg=#{{base01-hex}}] #W #[fg=#{{base01-hex}}, bg=#{{base00-hex}}, noitalics]"
